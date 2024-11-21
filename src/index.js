@@ -20,7 +20,8 @@ const app = express();
 const corsOptions = {
     origin: process.env.CORS_ORIGIN || "*", // Allow only your frontend's origin
     methods: ['GET', 'POST'], // Allow these methods
-    credentials: true // Allow credentials (if needed)
+    credentials: true, // Allow credentials (if needed)
+    allowedHeaders: ["Content-Type", "Authorization"]
 };
 
 app.use(cors(corsOptions));
