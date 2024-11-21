@@ -84,7 +84,7 @@ io.on('connection', (socket) => {
         const { content, user, group, timestamp } = data;
     
         try {
-            const response = await axios.post('http://localhost:5001/check-toxicity', { message: content });
+            const response = await axios.post('process.env.TOXICITY_API/check-toxicity', { message: content });
             const { allowed, reason, score } = response.data;
 
             // If the message is not allowed, send a blocked message feedback
