@@ -18,7 +18,7 @@ const app = express();
 
 // CORS configuration
 const corsOptions = {
-    origin: 'http://localhost:3000', // Allow only your frontend's origin
+    origin: process.env.CORS_ORIGIN || "*", // Allow only your frontend's origin
     methods: ['GET', 'POST'], // Allow these methods
     credentials: true // Allow credentials (if needed)
 };
